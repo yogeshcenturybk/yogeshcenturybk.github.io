@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yogesh Century B.K. — iOS App Engineer</title>
+  <meta name="description" content="iOS App Engineer from Nepal. Building scalable mobile apps with Swift, SwiftUI, and MVVM architecture." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Animated background canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Noise overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- ─── NAVBAR ─────────────────────────────────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>YCB<span class="logo-bracket">/&gt;</span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#achievements" class="nav-link">Achievements</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ─── HERO ───────────────────────────────────────────── -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="status-dot"></span>
+        <span>Available for opportunities</span>
+      </div>
+      <h1 class="hero-name">
+        <span class="name-line" data-delay="0">Yogesh</span>
+        <span class="name-line accent" data-delay="150">Century</span>
+        <span class="name-line" data-delay="300">B.K.</span>
+      </h1>
+      <div class="hero-title-wrapper">
+        <span class="hero-title-prefix">//</span>
+        <span class="hero-title-text" id="typed-title"></span>
+        <span class="cursor-blink">_</span>
+      </div>
+      <p class="hero-tagline">
+        Crafting intuitive, high-performance mobile experiences —<br/>
+        from the hills of Nepal to App Stores worldwide.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">2+</span>
+          <span class="stat-label">Years iOS Dev</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">3</span>
+          <span class="stat-label">Live Apps</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">BE</span>
+          <span class="stat-label">Computer Engineer</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="phone-mockup">
+        <div class="phone-frame">
+          <div class="phone-screen">
+            <div class="phone-notch"></div>
+            <div class="phone-content">
+              <div class="app-icon-grid">
+                <div class="app-icon geo"><span>🌱</span></div>
+                <div class="app-icon trip"><span>✈️</span></div>
+                <div class="app-icon qpay"><span>💳</span></div>
+                <div class="app-icon code"><span>⌨️</span></div>
+              </div>
+              <div class="phone-code-lines">
+                <div class="code-line" style="--w:70%"><span class="kw">struct</span> <span class="cl">ContentView</span>: <span class="pr">View</span></div>
+                <div class="code-line" style="--w:55%"><span class="kw">  var</span> body: some <span class="pr">View</span></div>
+                <div class="code-line" style="--w:80%"><span class="cl">    VStack</span>(alignment: .leading)</div>
+                <div class="code-line" style="--w:60%"><span class="str">      "Hello, World"</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-glow"></div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ──────────────────────────────────────────── -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-label">// 01. about me</div>
+      <div class="about-grid">
+        <div class="about-photo-col">
+          <div class="photo-frame">
+            <div class="photo-placeholder">
+              <div class="photo-initials">YCB</div>
+              <div class="photo-hint">Your photo goes here</div>
+            </div>
+            <div class="photo-border-animate"></div>
+          </div>
+          <div class="about-location">
+            <span class="loc-icon">📍</span>
+            <span>Kathmandu, Nepal</span>
+          </div>
+          <div class="about-social">
+            <a href="https://linkedin.com/in/yogeshcenturybk" target="_blank" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="mailto:yogesh.century111@gmail.com" class="social-link" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.249.068-.481.188-.681L12 13.09 23.812 4.776c.12.2.188.432.188.681z"/></svg>
+            </a>
+            <a href="tel:+9779800764969" class="social-link" aria-label="Phone">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="about-text-col">
+          <h2 class="section-title">The Story So Far</h2>
+          <div class="about-story">
+            <p>I'm Yogesh Century B.K., an iOS App Engineer based in Kathmandu, Nepal — but my journey started long before the capital city.</p>
+            <p>Right after finishing high school (<span class="highlight">+2 level</span>), I dove straight into the tech world — repairing computers, printers, and managing system networks. That hands-on grounding gave me something most engineers don't have: a deep intuition for how machines actually work.</p>
+            <p>I then pursued a <span class="highlight">Bachelor of Engineering in Computer Engineering</span> from Lumbini Engineering College. In my 3rd year, I was already giving back — teaching <span class="highlight">Computer Science and Mathematics</span> to students in Classes 8–10.</p>
+            <p>After graduating, I moved to Kathmandu with one goal: build real software. I landed an iOS internship at <span class="highlight">QPay Private Limited</span>, then leveled up to a full iOS Engineer role at <span class="highlight">Pathway Technologies</span>, where I currently craft mobile experiences used by real people across Nepal and beyond.</p>
+          </div>
+          <div class="about-tags">
+            <span class="tag">Swift</span>
+            <span class="tag">SwiftUI</span>
+            <span class="tag">MVVM</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">KMP</span>
+            <span class="tag">iOS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── EXPERIENCE ─────────────────────────────────────── -->
+  <section class="section experience" id="experience">
+    <div class="container">
+      <div class="section-label">// 02. experience</div>
+      <h2 class="section-title">Career Timeline</h2>
+      <div class="timeline">
+
+        <!-- Current -->
+        <div class="timeline-item active reveal">
+          <div class="timeline-dot active-dot"></div>
+          <div class="timeline-date">May 2025 – Present</div>
+          <div class="timeline-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">iOS App Engineer</h3>
+                <div class="card-company">Pathway Technologies · Thapathali, Kathmandu</div>
+              </div>
+              <span class="badge badge-active">Current</span>
+            </div>
+            <ul class="card-list">
+              <li>Built & maintained scalable iOS apps (<strong>Geokrishi Farm</strong> & <strong>TripTurbo</strong>) using MVVM architecture</li>
+              <li>Designed real-time chat via WebSockets, push notifications (APNs), and Google Maps integration</li>
+              <li>Firebase integration for auth, real-time sync, and analytics</li>
+              <li>Implemented multi-language support (English/Nepali) and deep linking</li>
+              <li>Contributed to Kotlin Multiplatform (KMP) for shared business logic</li>
+            </ul>
+            <div class="card-stack">
+              <span>Swift</span><span>SwiftUI</span><span>MVVM</span><span>Firebase</span><span>KMP</span><span>WebSockets</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- QPay -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Sep 2024 – May 2025</div>
+          <div class="timeline-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">iOS App Engineer</h3>
+                <div class="card-company">QPay Private Limited · Bhadrakali, Kathmandu</div>
+              </div>
+              <span class="badge">Internship → Full</span>
+            </div>
+            <ul class="card-list">
+              <li>Contributed to a digital wallet app enhancing mobile payment capabilities</li>
+              <li>Worked with Swift, UIKit, SwiftUI, and .NET backend for full-stack features</li>
+              <li>Implemented MVC architecture and delegation patterns</li>
+              <li>Integrated APIs for authentication, transactions, and data management</li>
+            </ul>
+            <div class="card-stack">
+              <span>Swift</span><span>UIKit</span><span>MVC</span><span>.NET</span><span>JSON APIs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Teaching -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">~2022 – 2023 (3rd Year)</div>
+          <div class="timeline-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Computer Science & Mathematics Teacher</h3>
+                <div class="card-company">Secondary School · Nepal</div>
+              </div>
+              <span class="badge">Part-time</span>
+            </div>
+            <ul class="card-list">
+              <li>Taught Computer Science and Mathematics to students in Classes 8, 9, and 10</li>
+              <li>Balanced full-time engineering studies while teaching — a testament to dedication</li>
+            </ul>
+            <div class="card-stack">
+              <span>Teaching</span><span>Mentorship</span><span>Computer Science</span><span>Mathematics</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- BE -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Dec 2019 – Oct 2024</div>
+          <div class="timeline-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">BE in Computer Engineering</h3>
+                <div class="card-company">Lumbini Engineering, Management & Science College · Bhalwari</div>
+              </div>
+              <span class="badge">Education</span>
+            </div>
+            <ul class="card-list">
+              <li>Studied core computer science — hardware, software, systems, and networks</li>
+              <li>Won <strong>"Original Idea Award"</strong> at a hackathon held in Dharan</li>
+              <li>Assisted 10+ teams at LEC Expo, earning recognition certificates from the college</li>
+            </ul>
+            <div class="card-stack">
+              <span>Algorithms</span><span>Networking</span><span>Systems</span><span>Hackathons</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- First Job -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">After +2 (~2019)</div>
+          <div class="timeline-card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">IT Technician</h3>
+                <div class="card-company">Computer & Printer Repair Shop · Nepal</div>
+              </div>
+              <span class="badge">First Job</span>
+            </div>
+            <ul class="card-list">
+              <li>Repaired computers, printers, and managed system setups</li>
+              <li>Handled networking and system administration tasks</li>
+              <li>Built a rock-solid hardware foundation that shapes my engineering instincts today</li>
+            </ul>
+            <div class="card-stack">
+              <span>Hardware</span><span>Networking</span><span>Troubleshooting</span><span>Sysadmin</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROJECTS ───────────────────────────────────────── -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-label">// 03. projects</div>
+      <h2 class="section-title">Live Apps</h2>
+      <p class="section-sub">Apps I've helped build — available on App Store & Play Store</p>
+
+      <div class="projects-grid">
+
+        <!-- Geokrishi -->
+        <div class="project-card reveal">
+          <div class="project-glow geo-glow"></div>
+          <div class="project-icon geo-icon">🌱</div>
+          <div class="project-body">
+            <div class="project-tag-row">
+              <span class="project-company">Pathway Technologies</span>
+              <span class="project-type">Agriculture</span>
+            </div>
+            <h3 class="project-name">Geokrishi Farm</h3>
+            <p class="project-desc">A comprehensive farming platform connecting Nepali farmers with agricultural resources, real-time news feeds, chat features, and geolocation services. Built with MVVM, Firebase, and multi-language support.</p>
+            <div class="project-tech">
+              <span>Swift</span><span>SwiftUI</span><span>Firebase</span><span>Maps SDK</span><span>WebSockets</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://apps.apple.com/np/app/geokrishi-farm-%E0%A4%9C-%E0%A4%AF-%E0%A4%95-%E0%A4%B7/id1639308709" class="store-btn ios-btn" target="_blank" data-ios="https://apps.apple.com/np/app/geokrishi-farm-%E0%A4%9C-%E0%A4%AF-%E0%A4%95-%E0%A4%B7/id1639308709" data-android="https://play.google.com/store/apps/details?id=com.pathway.geokrishi_farm" data-web="https://geokrishi.farm">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              App Store
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.pathway.geokrishi_farm" class="store-btn android-btn" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.25.99.25.35 0 .69-.08.99-.25l9.03-5.2-2.1-2.1-8.91 7.3zM.6 1.54C.23 1.9 0 2.44 0 3.14v17.72c0 .7.23 1.24.6 1.6l.09.08 9.92-9.91v-.23L.69 1.46.6 1.54zm19.35 8.89l-2.57-1.48-2.35 2.34 2.35 2.34 2.57-1.48c.74-.42.74-1.3 0-1.72zm-18.69 11l8.72-8.72 2.1 2.1-8.71 8.71L1.26 21.43z"/></svg>
+              Play Store
+            </a>
+            <a href="https://geokrishi.farm" class="store-btn web-btn" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              Website
+            </a>
+          </div>
+        </div>
+
+        <!-- TripTurbo -->
+        <div class="project-card reveal">
+          <div class="project-glow trip-glow"></div>
+          <div class="project-icon trip-icon">✈️</div>
+          <div class="project-body">
+            <div class="project-tag-row">
+              <span class="project-company">Pathway Technologies</span>
+              <span class="project-type">Travel</span>
+            </div>
+            <h3 class="project-name">Trip Turbo</h3>
+            <p class="project-desc">A travel companion app empowering explorers in Nepal and beyond. Features deep linking, push notifications, and smooth navigation experiences. Contributes to Nepal's growing tourism tech sector.</p>
+            <div class="project-tech">
+              <span>Swift</span><span>UIKit</span><span>Deep Linking</span><span>APNs</span><span>MVVM</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://apps.apple.com/np/app/trip-turbo/id6471469699" class="store-btn ios-btn" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              App Store
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.pathway.tripturbo.android" class="store-btn android-btn" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.25.99.25.35 0 .69-.08.99-.25l9.03-5.2-2.1-2.1-8.91 7.3zM.6 1.54C.23 1.9 0 2.44 0 3.14v17.72c0 .7.23 1.24.6 1.6l.09.08 9.92-9.91v-.23L.69 1.46.6 1.54zm19.35 8.89l-2.57-1.48-2.35 2.34 2.35 2.34 2.57-1.48c.74-.42.74-1.3 0-1.72zm-18.69 11l8.72-8.72 2.1 2.1-8.71 8.71L1.26 21.43z"/></svg>
+              Play Store
+            </a>
+            <a href="https://tripturbo.com" class="store-btn web-btn" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              Website
+            </a>
+          </div>
+        </div>
+
+        <!-- QPay -->
+        <div class="project-card reveal">
+          <div class="project-glow qpay-glow"></div>
+          <div class="project-icon qpay-icon">💳</div>
+          <div class="project-body">
+            <div class="project-tag-row">
+              <span class="project-company">QPay Private Limited</span>
+              <span class="project-type">FinTech</span>
+            </div>
+            <h3 class="project-name">QPay</h3>
+            <p class="project-desc">A digital wallet and mobile payment application for Nepal. Contributed to transaction processing, authentication flows, and improved overall app performance during my internship period.</p>
+            <div class="project-tech">
+              <span>Swift</span><span>UIKit</span><span>MVC</span><span>.NET APIs</span><span>FinTech</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://play.google.com/store/apps/details?id=net.qpaysolutions.QPay" class="store-btn android-btn" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.25.99.25.35 0 .69-.08.99-.25l9.03-5.2-2.1-2.1-8.91 7.3zM.6 1.54C.23 1.9 0 2.44 0 3.14v17.72c0 .7.23 1.24.6 1.6l.09.08 9.92-9.91v-.23L.69 1.46.6 1.54zm19.35 8.89l-2.57-1.48-2.35 2.34 2.35 2.34 2.57-1.48c.74-.42.74-1.3 0-1.72zm-18.69 11l8.72-8.72 2.1 2.1-8.71 8.71L1.26 21.43z"/></svg>
+              Play Store
+            </a>
+            <a href="https://qpay.com.np" class="store-btn web-btn" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              Website
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SKILLS ──────────────────────────────────────────── -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section-label">// 04. skills</div>
+      <h2 class="section-title">Tech Stack</h2>
+      <div class="skills-grid">
+
+        <div class="skill-category reveal">
+          <div class="skill-cat-icon">📱</div>
+          <h3>iOS Development</h3>
+          <div class="skill-pills">
+            <span class="pill primary">Swift</span>
+            <span class="pill primary">SwiftUI</span>
+            <span class="pill primary">UIKit</span>
+            <span class="pill">Xcode</span>
+            <span class="pill">Storyboard</span>
+            <span class="pill">XCTest</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <div class="skill-cat-icon">🏗️</div>
+          <h3>Architecture & Patterns</h3>
+          <div class="skill-pills">
+            <span class="pill primary">MVVM</span>
+            <span class="pill primary">MVC</span>
+            <span class="pill">Delegation</span>
+            <span class="pill">Combine</span>
+            <span class="pill">Clean Code</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <div class="skill-cat-icon">☁️</div>
+          <h3>Backend & Services</h3>
+          <div class="skill-pills">
+            <span class="pill primary">Firebase</span>
+            <span class="pill primary">RESTful APIs</span>
+            <span class="pill">WebSockets</span>
+            <span class="pill">APNs</span>
+            <span class="pill">JSON</span>
+            <span class="pill">.NET</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <div class="skill-cat-icon">🗺️</div>
+          <h3>SDKs & Integrations</h3>
+          <div class="skill-pills">
+            <span class="pill primary">Google Maps SDK</span>
+            <span class="pill primary">Deep Linking</span>
+            <span class="pill">Push Notifications</span>
+            <span class="pill">Analytics</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <div class="skill-cat-icon">🔀</div>
+          <h3>Cross-Platform</h3>
+          <div class="skill-pills">
+            <span class="pill primary">Kotlin Multiplatform</span>
+            <span class="pill">Shared Logic</span>
+            <span class="pill">KMP</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <div class="skill-cat-icon">🛠️</div>
+          <h3>Tools & Others</h3>
+          <div class="skill-pills">
+            <span class="pill primary">Git</span>
+            <span class="pill primary">Rebase</span>
+            <span class="pill">Networking</span>
+            <span class="pill">Nepali</span>
+            <span class="pill">English</span>
+            <span class="pill">Hindi</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ACHIEVEMENTS ───────────────────────────────────── -->
+  <section class="section achievements" id="achievements">
+    <div class="container">
+      <div class="section-label">// 05. achievements</div>
+      <h2 class="section-title">Milestones & Recognition</h2>
+      <div class="achievements-grid">
+
+        <div class="achievement-card reveal">
+          <div class="ach-icon">🏆</div>
+          <div class="ach-content">
+            <h3>Original Idea Award</h3>
+            <p>Won at a Hackathon held in <strong>Dharan, Nepal</strong> during college — recognized for unique innovation and creative problem-solving.</p>
+          </div>
+        </div>
+
+        <div class="achievement-card reveal">
+          <div class="ach-icon">🎓</div>
+          <div class="ach-content">
+            <h3>LEC Expo Recognition</h3>
+            <p>Assisted <strong>10+ teams</strong> at LEC Expo — the college annual tech exhibition — and received official recognition certificates from the institution.</p>
+          </div>
+        </div>
+
+        <div class="achievement-card reveal">
+          <div class="ach-icon">📱</div>
+          <div class="ach-content">
+            <h3>3 Live Production Apps</h3>
+            <p>Shipped <strong>3 production apps</strong> on the App Store and Play Store — in FinTech, Agriculture, and Travel domains — all serving real users in Nepal.</p>
+          </div>
+        </div>
+
+        <div class="achievement-card reveal">
+          <div class="ach-icon">👨‍🏫</div>
+          <div class="ach-content">
+            <h3>Educator While Studying</h3>
+            <p>Taught <strong>Computer Science and Mathematics</strong> to secondary school students while simultaneously completing a demanding engineering degree.</p>
+          </div>
+        </div>
+
+        <div class="achievement-card reveal">
+          <div class="ach-icon">🚀</div>
+          <div class="ach-content">
+            <h3>Career in the Capital</h3>
+            <p>Moved from Bhairahawa to Kathmandu right after graduation to pursue big-city opportunities — secured 2 engineering roles within a year.</p>
+          </div>
+        </div>
+
+        <div class="achievement-card reveal">
+          <div class="ach-icon">🌐</div>
+          <div class="ach-content">
+            <h3>Multi-Language App Support</h3>
+            <p>Implemented full <strong>English & Nepali</strong> localization in production apps — improving accessibility for diverse Nepali user communities.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ─────────────────────────────────────────── -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-label">// 06. contact</div>
+      <h2 class="section-title">Let's Build Something</h2>
+      <p class="contact-intro">Whether it's a new iOS project, a collaboration, or just a hello from a fellow dev — my inbox is always open.</p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <a href="mailto:yogesh.century111@gmail.com" class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value">yogesh.century111@gmail.com</div>
+            </div>
+          </a>
+          <a href="tel:+9779800764969" class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-label">Phone</div>
+              <div class="contact-value">+977-9800764969</div>
+            </div>
+          </a>
+          <a href="https://linkedin.com/in/yogeshcenturybk" target="_blank" class="contact-item">
+            <div class="contact-icon">💼</div>
+            <div>
+              <div class="contact-label">LinkedIn</div>
+              <div class="contact-value">linkedin.com/in/yogeshcenturybk</div>
+            </div>
+          </a>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-label">Location</div>
+              <div class="contact-value">Srijanapath-13, Bhairahawa · Kathmandu, Nepal</div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-cta-box">
+          <div class="cta-code">
+            <div class="code-comment">// Ready to collaborate?</div>
+            <div class="code-line-item"><span class="kw">let</span> engineer = <span class="str">"Yogesh B.K."</span></div>
+            <div class="code-line-item"><span class="kw">let</span> role = <span class="str">"iOS App Engineer"</span></div>
+            <div class="code-line-item"><span class="kw">let</span> status = <span class="cl">AvailableForOpportunities</span>()</div>
+            <div class="code-line-item"><span class="cl">engineer</span>.<span class="fn">connect</span>() <span class="comment">// 👈 tap here</span></div>
+          </div>
+          <a href="mailto:yogesh.century111@gmail.com" class="btn btn-primary btn-large">Say Hello 👋</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ──────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-bracket">&lt;</span>YCB<span class="logo-bracket">/&gt;</span>
+        </div>
+        <p class="footer-text">Designed & Coded with ❤️ from Nepal · Yogesh Century B.K.</p>
+        <p class="footer-copy">© <span id="year"></span> All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
